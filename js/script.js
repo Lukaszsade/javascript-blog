@@ -3,7 +3,7 @@
     const links = document.querySelectorAll('.titles a');
     console.log('links:', links);
   });*/
-  const titleClickHandler = function(event){
+ { const titleClickHandler = function(event){
     event.preventDefault();
     const clickedElement = this;
     console.log('Link was clicked!');
@@ -38,7 +38,7 @@ for(let activeArticle of activeArticles) {
   
   /* add class 'active' to the correct article */
   targetArticle.classList.add('active');
-}
+
   
   const links = document.querySelectorAll('.titles a');
   
@@ -46,3 +46,52 @@ for(let activeArticle of activeArticles) {
     link.addEventListener('click', titleClickHandler);
   }
   
+ }
+ 
+  const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles';
+
+function generateTitleLinks(customSelector = ''){
+
+
+  customSelector = customSelector.replace('#', '');
+
+  /* remove contents of titleList */
+  const titleList = document.querySelector(opt.titleListSelector); 
+  titleList.innerHTML = '';
+  console.log('titleList: usunięto listę linków');
+
+  /* for each article */
+const articles = document.querySelectorAll(opt.ArticleSelector + customSelector);
+  console.log('opt.ArticleSelector + customSelector: ', opt.ArticleSelector + customSelector);    let html = '';
+
+  for(let article of articles) {
+    /* get the article id */
+    const articleId = article.getAttribute('id');
+    console.log('articleId: ', articleId);
+
+    /* find the title element */
+
+    const articleTitle = article.querySelector(opt.titleSelector).innerHTML;
+
+    /* get the title from the title element */
+
+    const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+    console.log('linkHTML: ', linkHTML);
+    
+    /* create HTML of the link */
+  }
+    titleList.innerHTML = titleList.innerHTML + linkHTML;
+
+    /* insert link into titleList */
+    titleList.insertAdjacentHTML('afterbegin', linkHTML);
+    console.log('titleList: ', titleList); 
+    
+    html = html + linkHTML;
+    console.log('htlm: ', html);
+}
+  
+generateTitleLinks();
+  
+  }
