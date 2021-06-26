@@ -46,8 +46,6 @@
       optArticleSelector + customSelector
     );
 
-    let html = "";
-
     for (let article of articles) {
       /* get the article id */
       const articleId = article.getAttribute("id");
@@ -63,20 +61,11 @@
         articleTitle +
         "</span></a></li>";
 
-      // opcja 1
-      /* create HTML of the link */
-      // titleList.innerHTML = titleList.innerHTML + linkHTML;
-
-      // opcja 2
       /* insert link into titleList */
-      // titleList.insertAdjacentHTML("beforeend", linkHTML);
-      // console.log("titleList: ", titleList);
-
-      // opcja 3
-      /* insert link HTML markup to "html" variable */
-      html = html + linkHTML;
-      // console.log("htlm: ", html);
+      titleList.insertAdjacentHTML("beforeend", linkHTML);
+      console.log("titleList: ", titleList);
     }
+    
     /* insert "html" variable to titleList wrapper element */
     titleList.innerHTML = html;
 
@@ -86,6 +75,7 @@
     /* for each link add on-click handler */
     for (let link of links) {
       link.addEventListener("click", titleClickHandler);
+      let html = "";
     }
   }
 
