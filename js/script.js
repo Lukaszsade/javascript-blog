@@ -63,11 +63,7 @@
 
       /* insert link into titleList */
       titleList.insertAdjacentHTML("beforeend", linkHTML);
-      console.log("titleList: ", titleList);
     }
-    
-    /* insert "html" variable to titleList wrapper element */
-    titleList.innerHTML = html;
 
     /* get all article link elements */
     const links = document.querySelectorAll(".titles a");
@@ -75,9 +71,7 @@
     /* for each link add on-click handler */
     for (let link of links) {
       link.addEventListener("click", titleClickHandler);
-      let html = "";
     }
   }
-
   generateTitleLinks();
 }
