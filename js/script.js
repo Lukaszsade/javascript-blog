@@ -38,7 +38,7 @@
 
   function generateTitleLinks(customSelector = "") {
     customSelector = customSelector.replace("#", "");
-
+    console.log(generateTitleLinks)
     /* remove contents of titleList */
     const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = "";
@@ -124,6 +124,7 @@ function generateTags(){
     }
 
     
+    
    
     /* END LOOP: for each tag */
 
@@ -168,6 +169,7 @@ const activeTags = document.querySelectorAll('a.active[href^="#tag-"]');
   /* END LOOP: for each found tag link */
 
   /* execute function "generateTitleLinks" with article selector as argument */
+  generateTitleLinks('[data-tags~="' + tag + '"]');
 }
 
 function addClickListenersToTags(){
